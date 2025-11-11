@@ -1,47 +1,40 @@
-const projects = [
-  {
-    title: "Portfolio Website",
-    description: "My personal portfolio built using React and Tailwind CSS to showcase my work and skills.",
-    tech: "React, Tailwind CSS",
-    github: "https://github.com/yourusername/portfolio",
-    live: "https://rakesh-portfolio.vercel.app"
-  },
-  {
-    title: "Todo App",
-    description: "A simple and responsive task manager that lets users add, edit, and delete tasks locally.",
-    tech: "React, JavaScript, CSS",
-    github: "https://github.com/yourusername/todo-app",
-    live: "#"
-  },
-  {
-    title: "Responsive Web Design Projects",
-    description: "A collection of frontend designs built during freeCodeCamp’s Responsive Web Design course.",
-    tech: "HTML, CSS",
-    github: "https://github.com/yourusername/freecodecamp-projects",
-    live: "#"
-  }
-]
+import React from "react";
+import ProjectCard from "./ProjectCard";
+import projects from "../data/projects";
+import { motion } from "framer-motion";
+import { FaRocket } from "react-icons/fa";
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 text-gray-900">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-10">Projects</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div key={index} className="bg-gray-100 rounded-2xl p-6 shadow hover:shadow-lg transition">
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-sm mb-4">{project.description}</p>
-              <p className="text-xs text-gray-600 mb-4">Tech: {project.tech}</p>
-              <div className="flex gap-3">
-                <a href={project.live} target="_blank" className="text-blue-600 font-semibold hover:underline">Live</a>
-                <a href={project.github} target="_blank" className="text-gray-700 font-semibold hover:underline">GitHub</a>
-              </div>
-            </div>
-          ))}
+    <section
+      id="projects"
+      className="py-20 text-white flex flex-col items-center"
+    >
+      {/* Heading */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false }}
+        className="text-center mb-12"
+      >
+        <div className="flex items-center justify-center gap-3">
+          <h2 className="text-4xl font-bold text-pink-400">Featured Projects</h2>
+          <FaRocket className="text-pink-400 text-2xl" />
         </div>
+        <p className="text-gray-400 mt-2">
+          Built with modern tech & clean design
+        </p>
+      </motion.div>
+
+      {/* Project Cards */}
+      <div className="w-full max-w-6xl px-4 md:px-8">
+        {projects.map((project, index) => (
+          <ProjectCard key={index} project={project} index={index} />
+        ))}
       </div>
     </section>
-  )
-}
-export default Projects
+  );
+};
+
+export default Projects;
