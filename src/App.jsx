@@ -9,7 +9,7 @@ import Contact from "./components/Contact";
 
 function App() {
   return (
-    <div className="">
+    <div className="min-h-screen w-full bg-noise-gradient">
       <Navbar />
       <main className="pt-10">
        <Sidebar />

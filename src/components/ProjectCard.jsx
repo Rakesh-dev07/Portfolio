@@ -1,66 +1,114 @@
 import React from "react";
-import { FaGithub, FaGlobe } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-const ProjectCard = ({ project, index }) => {
+const ProjectCard = ({ project }) => {
   return (
     <motion.div
-      className="flex flex-col md:flex-row items-center gap-6 bg-black/30 border border-white/10 rounded-2xl p-6 md:p-8 mb-10 backdrop-blur-md shadow-lg hover:shadow-cyan-500/10 transition-all"
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.2, duration: 0.5, type: "spring" }}
-      viewport={{ once: false, amount: 0.2 }}
+      transition={{ duration: 0.4 }}
+      viewport={{ once: true }}
+
+      className="
+        bg-black/30 backdrop-blur-md
+        rounded-2xl border border-white/10 
+        shadow-md overflow-hidden
+        p-6 
+        flex flex-col 
+        lg:flex-row
+        gap-8
+        mb-5   /* ➜ spacing between project cards */
+      "
     >
-      {/* Left Side — Image */}
-      <div className="w-full md:w-[45%] rounded-xl overflow-hidden shadow-lg">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-        />
+      {/* Left: Image */}
+      <div
+        className="
+          lg:w-1/2 
+          flex justify-center items-center 
+        "
+      >
+        <div
+          className="
+            w-full 
+            h-48 sm:h-56 md:h-64 lg:h-80  /* ➜ equal height on large screens */
+            rounded-xl overflow-hidden
+          "
+        >
+          <img
+            src={project.image}
+            alt={project.title}
+            loading="lazy"
+            className="
+              w-full h-full object-cover
+              transition-transform duration-500 
+              hover:scale-105
+            "
+          />
+        </div>
       </div>
 
-      {/* Right Side — Text Content */}
-      <div className="flex flex-col justify-between w-full md:w-[55%] text-left space-y-4">
-        <div>
-          <h3 className="text-2xl font-semibold text-white mb-2">
-            {project.title}
-          </h3>
-          <p className="text-gray-300 mb-4 leading-relaxed">
-            {project.description}
-          </p>
+      {/* Right: Text Content */}
+      <div
+        className="
+          lg:w-1/2
+          flex flex-col justify-center  /* ➜ centers text vertically */
+        "
+      >
+        <h3 className="text-2xl font-bold text-white mb-3">
+          {project.title}
+        </h3>
 
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2 mb-4">
-            {project.tags.map((tag, i) => (
-              <span
-                key={i}
-                className="bg-gray-800 text-gray-200 text-sm px-3 py-1 rounded-full"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+        <p className="text-gray-300 text-base mb-5 leading-relaxed">
+          {project.description}
+        </p>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 mb-5">
+          {project.tags.map((tag, i) => (
+            <span
+              key={i}
+              className="
+                px-3 py-1 rounded-full text-xs
+                bg-white/10 border border-white/20 
+                text-cyan-300
+              "
+            >
+              {tag}
+            </span>
+          ))}
         </div>
 
-        {/* Links — stay fixed in place */}
-        <div className="flex items-center gap-6 pt-2">
+        {/* Buttons */}
+        <div className="flex gap-4 mt-3">
           <a
             href={project.github}
             target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-gray-400 hover:text-white transition-all"
+            className="
+              px-4 py-2 rounded-full 
+              border border-white/20 bg-black/20 
+              text-gray-200 text-sm
+              hover:bg-white/10 hover:border-cyan-400 hover:text-cyan-300
+              transition-all
+            "
           >
-            <FaGithub /> <span>GitHub</span>
+            GitHub
           </a>
-          <a
-            href={project.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-all"
-          >
-            <FaGlobe /> <span>Live</span>
-          </a>
+
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              className="
+                px-4 py-2 rounded-full 
+                border border-white/20 bg-black/20 
+                text-gray-200 text-sm
+                hover:bg-white/10 hover:border-cyan-400 hover:text-cyan-300
+                transition-all
+              "
+            >
+              Live Demo
+            </a>
+          )}
         </div>
       </div>
     </motion.div>
