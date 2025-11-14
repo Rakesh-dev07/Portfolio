@@ -51,7 +51,7 @@ const Navbar = () => {
           <li key={item}>
             <a
               href={`#${item.toLowerCase()}`}
-              className="hover:text-cyan-400 hover:drop-shadow-[0_0_8px_#06B6D4] transition-all"
+              className="hover:text-cyan-400  transition-all"
             >
               {item}
             </a>

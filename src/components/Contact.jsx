@@ -1,13 +1,49 @@
-import React, { useRef } from "react";
+// src/components/Contact.jsx
+import React, { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import emailjs from "emailjs-com";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.2 });
 
+  const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Form submitted! (You can connect EmailJS later)");
+
+    setLoading(true);
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        toast.success("Message sent successfully!");
+        setForm({ name: "", email: "", message: "" }); // clear form
+        setLoading(false);
+      })
+      .catch(() => {
+        toast.error("Failed to send message. Try again later.");
+        setLoading(false);
+      });
   };
 
   return (
@@ -16,87 +52,93 @@ const Contact = () => {
       ref={ref}
       className="py-20 text-white flex flex-col items-center"
     >
-      {/* Header (minimal animation) */}
+      {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
         className="text-center mb-12"
       >
         <h2 className="text-4xl font-bold mb-3 text-cyan-400">Contact Me</h2>
-        <p className="text-gray-400">
-          Fill out the form below to get in touch with me.
-        </p>
+        <p className="text-gray-400">Fill out the form below to get in touch.</p>
       </motion.div>
 
-      {/* Content wrapper */}
-      <div className="w-full max-w-6xl px-6 md:px-8 flex flex-col md:flex-row items-center gap-12">
-        {/* SVG Illustration — hidden on small screens */}
+      <div className="w-full max-w-[1200px] mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center gap-12 overflow-hidden">
+
+        {/* SVG — hidden on mobile */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6 }}
           className="hidden md:flex justify-center w-1/2"
         >
           <img
-            src="/src/assets/contact1.svg"
+            src="/src/assets/contact.svg"
             alt="Contact Illustration"
-            className="w-4/5 max-w-md object-contain"
+            className="w-4/5 max-w-md"
           />
         </motion.div>
 
         {/* Contact Form */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="w-full md:w-1/2 bg-black/40 border border-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-lg"
         >
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-col space-y-5 text-left"
-          >
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+
+            {/* Name */}
             <div>
-              <label className="block text-sm font-semibold mb-1 text-gray-200">
-                Name
-              </label>
+              <label className="block text-sm mb-1 text-gray-300">Name</label>
               <input
                 type="text"
-                placeholder="Your Name"
-                className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/10 text-gray-200 focus:outline-none focus:border-cyan-400 transition"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
                 required
+                className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/10 text-gray-200 focus:border-cyan-400 outline-none"
               />
             </div>
 
+            {/* Email */}
             <div>
-              <label className="block text-sm font-semibold mb-1 text-gray-200">
-                Email
-              </label>
+              <label className="block text-sm mb-1 text-gray-300">Email</label>
               <input
                 type="email"
-                placeholder="me@example.com"
-                className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/10 text-gray-200 focus:outline-none focus:border-cyan-400 transition"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
                 required
+                className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/10 text-gray-200 focus:border-cyan-400 outline-none"
               />
             </div>
 
+            {/* Message */}
             <div>
-              <label className="block text-sm font-semibold mb-1 text-gray-200">
-                Message
-              </label>
+              <label className="block text-sm mb-1 text-gray-300">Message</label>
               <textarea
+                name="message"
+                value={form.message}
+                onChange={handleChange}
                 rows="5"
-                placeholder="Your Message"
-                className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/10 text-gray-200 focus:outline-none focus:border-cyan-400 transition resize-none"
                 required
+                className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/10 text-gray-200 focus:border-cyan-400 outline-none"
               />
             </div>
 
+            {/* Submit */}
             <button
               type="submit"
-              className="w-full py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition"
+              disabled={loading}
+              className={`w-full py-3 rounded-lg font-semibold transition
+                ${loading
+                  ? "bg-gray-600 cursor-not-allowed"
+                  : "bg-cyan-500 hover:bg-cyan-600"
+                }
+              `}
             >
-              Submit
+              {loading ? "Sending..." : "Send Message"}
             </button>
           </form>
         </motion.div>

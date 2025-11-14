@@ -1,8 +1,20 @@
 const Footer = () => {
   return (
-    <footer className="py-6 bg-gray-800 text-gray-400 text-center text-sm">
-      © {new Date().getFullYear()} Rakesh | Built with ❤️ using React & Tailwind CSS
+    <footer
+      className="
+        mt-20 py-6 
+        bg-black/30 backdrop-blur-md 
+        border-t border-white/10 
+        text-gray-400 text-center text-sm
+      "
+    >
+      <p>
+        © {new Date().getFullYear()}{" "}
+        <span className="text-cyan-400 font-medium">Rakesh</span> — Built with
+        React & Tailwind CSS
+      </p>
     </footer>
-  )
-}
-export default Footer
+  );
+};
+
+export default Footer;
