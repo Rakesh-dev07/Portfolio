@@ -74,7 +74,7 @@ const Contact = () => {
           className="hidden md:flex justify-center w-1/2"
         >
           <img
-            src="/src/assets/contact.svg"
+            src={contactsvg}
             alt="Contact Illustration"
             className="w-4/5 max-w-md"
           />
