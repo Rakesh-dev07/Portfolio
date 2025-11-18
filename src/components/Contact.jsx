@@ -1,6 +1,7 @@
 // src/components/Contact.jsx
 import React, { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import contactsvg from "../assets/contact.svg";
 import emailjs from "emailjs-com";
 import toast from "react-hot-toast";
 
