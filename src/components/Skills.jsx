@@ -3,18 +3,18 @@ import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 const skills = [
+  { name: "Vite", icon: "https://skillicons.dev/icons?i=vite" },
   { name: "React", icon: "https://skillicons.dev/icons?i=react" },
-  { name: "Next.js", icon: "https://skillicons.dev/icons?i=nextjs" },
-  { name: "Tailwind", icon: "https://skillicons.dev/icons?i=tailwind" },
   { name: "Node.js", icon: "https://skillicons.dev/icons?i=nodejs" },
-  { name: "MongoDB", icon: "https://skillicons.dev/icons?i=mongodb" },
   { name: "Express", icon: "https://skillicons.dev/icons?i=express" },
-  { name: "MySQL", icon: "https://skillicons.dev/icons?i=mysql" },
+  { name: "MongoDB", icon: "https://skillicons.dev/icons?i=mongodb" },
+  { name: "Tailwind", icon: "https://skillicons.dev/icons?i=tailwind" },
   { name: "Git", icon: "https://skillicons.dev/icons?i=git" },
   { name: "GitHub", icon: "https://skillicons.dev/icons?i=github" },
-  { name: "Docker", icon: "https://skillicons.dev/icons?i=docker" },
-  { name: "Python", icon: "https://skillicons.dev/icons?i=python" },
-  { name: "AWS", icon: "https://skillicons.dev/icons?i=aws" },
+  { name: "Postman", icon: "https://skillicons.dev/icons?i=postman" },
+  { name: "HTML", icon: "https://skillicons.dev/icons?i=html" },
+  { name: "CSS", icon: "https://skillicons.dev/icons?i=css" },
+  { name: "JavaScript", icon: "https://skillicons.dev/icons?i=javascript" },
 ];
 
 const itemVariant = {

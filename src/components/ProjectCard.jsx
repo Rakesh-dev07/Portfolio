@@ -24,7 +24,7 @@ const ProjectCard = ({ project }) => {
     >
       {/* Left: Project Image */}
       <div className="lg:w-1/2 flex items-center justify-center">
-        <div className="w-full h-48 sm:h-56 md:h-64 lg:h-88 rounded-xl overflow-hidden">
+        <div className="w-full h-48 sm:h-56 md:h-64 lg:h-88 rounded-xl  overflow-hidden bg-cover">
           <img
             src={project.image}
             alt={project.title}
