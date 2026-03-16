@@ -6,27 +6,27 @@ const Sidebar = () => {
     {
       id: 1,
       icon: <FaLinkedin />,
-      url: "https://linkedin.com/in/rakesh",
+      url: "https://www.linkedin.com/in/contact-rakesh-yadav",
       label: "LinkedIn",
     },
     {
       id: 2,
       icon: <FaGithub />,
-      url: "https://github.com/rakesh",
+      url: "https://github.com/Rakesh-dev07",
       label: "GitHub",
     },
     {
       id: 3,
       icon: <FaEnvelope />,
-      url: "mailto:rakesh@example.com",
+      url: "mailto:rakesh.yadavtech20@example.com",
       label: "Email",
     },
-    {
-      id: 4,
-      icon: <FaInstagram />,
-      url: "https://instagram.com/rakesh",
-      label: "Instagram",
-    },
+    // {
+    //   id: 4,
+    //   icon: <FaInstagram />,
+    //   url: "https://instagram.com/rakesh",
+    //   label: "Instagram",
+    // },
   ];
 
   return (

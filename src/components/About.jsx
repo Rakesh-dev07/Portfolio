@@ -15,14 +15,14 @@ const About = () => {
         className="max-w-3xl mx-auto px-6 text-center"
       >
         {/* Subheading */}
-        <span
+        {/* <span
           className="
             inline-block bg-gray-800 text-gray-300 
             px-4 py-1 rounded-full text-sm shadow-sm mb-4
           "
         >
           Who I Am
-        </span>
+        </span> */}
 
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold mb-6">

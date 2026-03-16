@@ -3,13 +3,13 @@ import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 const skills = [
-  { name: "Vite", icon: "https://skillicons.dev/icons?i=vite" },
+  // { name: "Vite", icon: "https://skillicons.dev/icons?i=vite" },
   { name: "React", icon: "https://skillicons.dev/icons?i=react" },
   { name: "Node.js", icon: "https://skillicons.dev/icons?i=nodejs" },
   { name: "Express", icon: "https://skillicons.dev/icons?i=express" },
   { name: "MongoDB", icon: "https://skillicons.dev/icons?i=mongodb" },
   { name: "Tailwind", icon: "https://skillicons.dev/icons?i=tailwind" },
-  { name: "Git", icon: "https://skillicons.dev/icons?i=git" },
+  // { name: "Git", icon: "https://skillicons.dev/icons?i=git" },
   { name: "GitHub", icon: "https://skillicons.dev/icons?i=github" },
   { name: "Postman", icon: "https://skillicons.dev/icons?i=postman" },
   { name: "HTML", icon: "https://skillicons.dev/icons?i=html" },
@@ -83,15 +83,15 @@ export default function Skills() {
       <div className="hidden lg:flex flex-col items-center gap-10 w-full">
 
         {/* First Row (9 icons) */}
-        <div className="flex flex-wrap justify-center gap-10 max-w-6xl">
-          {skills.slice(0, 9).map((skill, i) => (
+        <div className="flex flex-wrap justify-center gap-10 max-w-4xl">
+          {skills.slice(0, 7).map((skill, i) => (
             <SkillItem key={skill.name} skill={skill} i={i} controls={controls} />
           ))}
         </div>
 
         {/* Second Row (3 icons) */}
-        <div className="flex flex-wrap justify-center gap-10 max-w-3xl">
-          {skills.slice(9).map((skill, i) => (
+        <div className="flex flex-wrap justify-center gap-10 max-w-4xl">
+          {skills.slice(7).map((skill, i) => (
             <SkillItem
               key={skill.name}
               skill={skill}

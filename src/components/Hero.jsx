@@ -44,7 +44,7 @@ const Hero = () => {
           strings={[
             "Full-Stack Developer",
             "MERN Stack Developer",
-            "Frontend Developer",
+            "Backend engineer",
           ]}
           typeSpeed={55}
           backSpeed={35}
@@ -83,7 +83,7 @@ const Hero = () => {
 
       {/* Resume Button */}
       <motion.a
-        href="/resume.pdf"
+        href="/Resume/Rakesh Yadav Resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="
