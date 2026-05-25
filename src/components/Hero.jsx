@@ -83,7 +83,7 @@ const Hero = () => {
 
       {/* Resume Button */}
       <motion.a
-        href="/Resume/Rakesh Yadav Resume.pdf"
+        href="/Resume/Rakesh_Yadav_Resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="
