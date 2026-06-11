@@ -115,7 +115,7 @@ Instructions:
         headers: {
           Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
           "Content-Type": "application/json",
-          "HTTP-Referer": "http://localhost:3000",
+          "HTTP-Referer": process.env.APP_URL,
           "X-Title": "Rakesh Portfolio",
         },
         body: JSON.stringify({
