@@ -1,16 +1,58 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern developer portfolio built with React, Tailwind CSS, and Vite. The portfolio showcases projects, technical skills, and professional experience through a responsive user interface and an integrated AI-powered assistant.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Portfolio: https://portfolio-red-three-22.vercel.app
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Responsive design for desktop, tablet, and mobile devices
+* Project showcase with live demos and source code links
+* Skills and technology overview
+* Contact section
+* AI-powered portfolio assistant
+* Smooth user experience with modern UI design
 
-## Expanding the ESLint configuration
+## AI Portfolio Assistant
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The portfolio includes an AI assistant that can answer questions about:
+
+* Skills and technologies
+* Projects
+* Experience
+* Availability
+* Contact information
+
+Built using OpenRouter API and Vercel Serverless Functions.
+
+## Tech Stack
+
+### Frontend
+
+* React
+* Tailwind CSS
+* Vite
+* JavaScript (ES6+)
+
+### Services
+
+* OpenRouter
+* Vercel
+
+## Featured Projects
+
+### FlowDesk
+
+Multi-tenant SaaS project management platform featuring role-based access control, JWT authentication, analytics dashboard, and task workflow management.
+
+### Reminder App
+
+Full-stack reminder application with JWT authentication, Google OAuth, Firebase notifications, and scheduled reminders.
+
+
+## Contact
+
+* LinkedIn: https://www.linkedin.com/in/contact-rakesh-yadav
+* GitHub: https://github.com/Rakesh-dev07
