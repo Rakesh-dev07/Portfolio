@@ -119,7 +119,7 @@ Instructions:
           "X-Title": "Rakesh Portfolio",
         },
         body: JSON.stringify({
-          model: "nex-agi/nex-n2-pro:free",
+          model: "nvidia/nemotron-3-ultra-550b-a55b:free",
           messages: [
             {
               role: "system",
