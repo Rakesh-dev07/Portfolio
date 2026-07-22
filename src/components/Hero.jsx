@@ -101,7 +101,7 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.8 }}
       >
-        Resume
+        Resume / CV
       </motion.a>
     </section>
   );
