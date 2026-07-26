@@ -4,7 +4,7 @@ const projects = [
   {
     title: "Reminder App",
     description:
-      "Reminder App is a full-stack MERN application that enables users to create, manage, and receive scheduled reminders with secure authentication via JWT and Google OAuth. The system exposes RESTful APIs for CRUD operations, leverages MongoDB for persistent storage, and integrates Firebase Cloud Messaging to deliver real-time push notifications. Background cron jobs handle automated reminder scheduling and execution.",
+      "A production-ready full-stack MERN application that enables users to create reminders using AI-powered natural language, manage one-time and recurring schedules, receive real-time browser push notifications, and organize tasks through an interactive calendar. Built with React, Node.js, Express, MongoDB, Firebase Cloud Messaging, JWT, and Google OAuth, the application delivers a secure, responsive, and production-quality user experience.",
     image: "/Projects/01.png",
     tags: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Firebase", "Google OAuth"],
     github: "https://github.com/Rakesh-dev07/Reminder_app",
